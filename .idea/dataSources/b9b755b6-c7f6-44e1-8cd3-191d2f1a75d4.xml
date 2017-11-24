@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="school@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="school">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="sakila"/>
+    <schema id="7" parent="1" name="stpractice"/>
+    <schema id="8" parent="1" name="sys"/>
+    <schema id="9" parent="1" name="testdb"/>
+    <schema id="10" parent="1" name="world"/>
+    <table id="11" parent="2" name="cabinet"/>
+    <table id="12" parent="2" name="class"/>
+    <table id="13" parent="2" name="puples"/>
+    <table id="14" parent="2" name="subject"/>
+    <table id="15" parent="2" name="teachers"/>
+    <table id="16" parent="2" name="timetable"/>
+    <column id="17" parent="11" name="idCabinet">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="18" parent="11" name="floor">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="19" parent="11" name="idCabinet_UNIQUE">
+      <ColNames>idCabinet</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="20" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>idCabinet</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="21" parent="11" name="idCabinet_UNIQUE">
+      <ColNames>idCabinet</ColNames>
+      <UnderlyingIndexName>idCabinet_UNIQUE</UnderlyingIndexName>
+    </key>
+    <column id="22" parent="12" name="idClass">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="23" parent="12" name="ClassManager">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="24" parent="12" name="Size">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="25" parent="12" name="idClass_UNIQUE">
+      <ColNames>idClass</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="26" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>idClass</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="27" parent="12" name="idClass_UNIQUE">
+      <ColNames>idClass</ColNames>
+      <UnderlyingIndexName>idClass_UNIQUE</UnderlyingIndexName>
+    </key>
+    <column id="28" parent="13" name="idPuple">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="29" parent="13" name="name">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="30" parent="13" name="sex">
+      <Position>3</Position>
+      <DataType>char(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="31" parent="13" name="DateOfBirth">
+      <Position>4</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="32" parent="13" name="Class_idClass">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="33" parent="13" name="idPuple_UNIQUE">
+      <ColNames>idPuple</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="34" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>Class_idClass</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="35" parent="13" name="idPuple_UNIQUE">
+      <ColNames>idPuple</ColNames>
+      <UnderlyingIndexName>idPuple_UNIQUE</UnderlyingIndexName>
+    </key>
+    <foreign-key id="36" parent="13" name="fk_Puples_Class1">
+      <ColNames>Class_idClass</ColNames>
+      <RefSchemaName>school</RefSchemaName>
+      <RefTableName>class</RefTableName>
+      <RefColNames>idClass</RefColNames>
+    </foreign-key>
+    <column id="37" parent="14" name="idSubject">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="38" parent="14" name="name">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="39" parent="14" name="idSubject_UNIQUE">
+      <ColNames>idSubject</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="40" parent="14" name="name_UNIQUE">
+      <ColNames>name</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="41" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>idSubject</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="42" parent="14" name="idSubject_UNIQUE">
+      <ColNames>idSubject</ColNames>
+      <UnderlyingIndexName>idSubject_UNIQUE</UnderlyingIndexName>
+    </key>
+    <key id="43" parent="14" name="name_UNIQUE">
+      <ColNames>name</ColNames>
+      <UnderlyingIndexName>name_UNIQUE</UnderlyingIndexName>
+    </key>
+    <column id="44" parent="15" name="name">
+      <Position>1</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="45" parent="15" name="qualification">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="46" parent="15" name="idTeacher">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="47" parent="15" name="Subject_idSubject">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="48" parent="15" name="fk_Teachers_Subject1_idx">
+      <ColNames>Subject_idSubject</ColNames>
+    </index>
+    <index id="49" parent="15" name="idStuff_UNIQUE">
+      <ColNames>idTeacher</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="50" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>idTeacher
+Subject_idSubject</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="51" parent="15" name="idStuff_UNIQUE">
+      <ColNames>idTeacher</ColNames>
+      <UnderlyingIndexName>idStuff_UNIQUE</UnderlyingIndexName>
+    </key>
+    <foreign-key id="52" parent="15" name="fk_Teachers_Subject1">
+      <ColNames>Subject_idSubject</ColNames>
+      <RefSchemaName>school</RefSchemaName>
+      <RefTableName>subject</RefTableName>
+      <RefColNames>idSubject</RefColNames>
+    </foreign-key>
+    <column id="53" parent="16" name="DayOfWeek">
+      <Position>1</Position>
+      <DataType>int(7)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="54" parent="16" name="NumberOfLesson">
+      <Position>2</Position>
+      <DataType>int(8)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="55" parent="16" name="Teachers_idTeacher">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="56" parent="16" name="Teachers_Subject_idSubject">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="57" parent="16" name="Class_idClass">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="58" parent="16" name="Cabinet_idCabinet">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="59" parent="16" name="fk_Timetable_Cabinet1_idx">
+      <ColNames>Cabinet_idCabinet</ColNames>
+    </index>
+    <index id="60" parent="16" name="fk_Timetable_Class1_idx">
+      <ColNames>Class_idClass</ColNames>
+    </index>
+    <index id="61" parent="16" name="fk_Timetable_Teachers1_idx">
+      <ColNames>Teachers_idTeacher
+Teachers_Subject_idSubject</ColNames>
+    </index>
+    <key id="62" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>Teachers_idTeacher
+Teachers_Subject_idSubject
+Class_idClass
+Cabinet_idCabinet</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="63" parent="16" name="fk_Timetable_Teachers1">
+      <ColNames>Teachers_idTeacher
+Teachers_Subject_idSubject</ColNames>
+      <RefSchemaName>school</RefSchemaName>
+      <RefTableName>teachers</RefTableName>
+      <RefColNames>idTeacher
+Subject_idSubject</RefColNames>
+    </foreign-key>
+    <foreign-key id="64" parent="16" name="fk_Timetable_Class1">
+      <ColNames>Class_idClass</ColNames>
+      <RefSchemaName>school</RefSchemaName>
+      <RefTableName>class</RefTableName>
+      <RefColNames>idClass</RefColNames>
+    </foreign-key>
+    <foreign-key id="65" parent="16" name="fk_Timetable_Cabinet1">
+      <ColNames>Cabinet_idCabinet</ColNames>
+      <RefSchemaName>school</RefSchemaName>
+      <RefTableName>cabinet</RefTableName>
+      <RefColNames>idCabinet</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>
